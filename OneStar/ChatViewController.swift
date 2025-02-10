@@ -1,13 +1,14 @@
 //
-//  ViewController.swift
+//  ChatView.swift
 //  OneStar
 //
-//  Created by Luana Bueno on 10/02/25.
+//  Created by Nina Leonardo Pereira Brandão on 10/02/25.
 //
 
+import Foundation
 import UIKit
 
-class ViewController: UIViewController {
+class ChatViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,4 +17,3 @@ class ViewController: UIViewController {
 
 
 }
-
