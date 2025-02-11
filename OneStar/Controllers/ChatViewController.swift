@@ -1,36 +1,52 @@
 //
-//  PopUpViewController.swift
+//  ChatView.swift
 //  OneStar
 //
 //  Created by Nina Leonardo Pereira Brandão on 10/02/25.
 //
 
+import Foundation
 import UIKit
 
-class PopUpViewController: UIViewController {
+class ChatViewController: UIViewController {
+    @IBOutlet var chatControllerView: UITableView!
+    
+    @IBOutlet var addPersonButton: [UIBarButtonItem]!
+    var friends = Person.mockFriends() //Aqui eu tenho todos os meus amigos
 
-    @IBOutlet weak var addingFriendscontrol: UITableView!
-    
-    var users = Person.mockPeople()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        addingFriendscontrol.delegate = self
-        addingFriendscontrol.dataSource = self
+        chatControllerView.delegate = self
+        chatControllerView.dataSource = self
+//        addPersonButton.first!.action = #selector(showPopUp)
+//        addPersonButton.first!.target = self
+        
+        
+    }
+    
+    @objc func showPopUp() {
+        let popUpVC = PopUpViewController() // Aqui criamos a instância do PopUpViewController.
+        
+        // Definindo o estilo de apresentação do PopUp (modal)
+        popUpVC.modalPresentationStyle = .overCurrentContext  // Para o pop-up aparecer sobre o atual contexto
+        popUpVC.modalTransitionStyle = .crossDissolve  // Para uma transição suave
+        
+        present(popUpVC, animated: true, completion: nil) // Apresentando o PopUp
     }
 }
 
-extension PopUpViewController: UITableViewDelegate {
+extension ChatViewController: UITableViewDelegate {
     
 }
 
-extension PopUpViewController: UITableViewDataSource {
+
+extension ChatViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-           return 1
+           return 1 //1 sessão, que é a sessão que tem os amigos mock
        }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return users.count
+       return friends.count //num de amigos
    }
     
     
@@ -38,7 +54,7 @@ extension PopUpViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell", for: indexPath)
-        let friend = users[indexPath.row]
+        let friend = friends[indexPath.row]
         
         // Estilizando a imagem do perfil para ser redonda
         cell.imageView?.image = friend.profilePicture
