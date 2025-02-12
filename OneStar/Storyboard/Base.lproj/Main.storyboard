@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mtW-Pu-jIW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mtW-Pu-jIW">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -27,18 +27,36 @@
                                     <imageReference key="image" image="circle" catalog="system" symbolScale="large"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVD-xy-KiG">
+                                <rect key="frame" x="337" y="751.66666666666663" width="40" height="34.333333333333371"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="vee-O9-hSd"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemPurpleColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="arrowshape.right.fill" catalog="system"/>
+                                <connections>
+                                    <segue destination="wwL-5c-dPq" kind="show" identifier="GoToSendingPage" id="7BO-d0-2Vo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fVD-xy-KiG" secondAttribute="trailing" constant="16" id="3bj-4C-VkV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hoZ-6m-Nv4" secondAttribute="bottom" constant="32" id="5Os-FK-r6D"/>
                             <constraint firstItem="hoZ-6m-Nv4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AoH-0l-NSq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fVD-xy-KiG" secondAttribute="bottom" constant="32" id="JE0-Su-8F5"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="sxR-7h-Lmw"/>
+                    <connections>
+                        <segue destination="ePh-6B-7ev" kind="show" identifier="GoToMatesView" id="7g6-s6-wSN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1146" y="4"/>
+            <point key="canvasLocation" x="-220.61068702290075" y="3.5211267605633805"/>
         </scene>
         <!--Choose your Mates-->
         <scene sceneID="rfW-HH-xqV">
@@ -111,12 +129,15 @@
                     <navigationItem key="navigationItem" title="Choose your Mates" id="bfP-Mp-0yi">
                         <barButtonItem key="rightBarButtonItem" title="Send" id="pJf-hB-ddJ">
                             <color key="tintColor" systemColor="systemPurpleColor"/>
+                            <connections>
+                                <segue destination="ePh-6B-7ev" kind="show" identifier="SendToMatesView" id="bdf-bA-MYH"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GpR-4H-jJc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="756.48854961832058" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="1683.206106870229" y="3.5211267605633805"/>
         </scene>
         <!--Mates-->
         <scene sceneID="QYg-ii-Px4">
@@ -171,11 +192,12 @@
                     <connections>
                         <outlet property="chatControllerView" destination="azg-ch-UQ4" id="c7D-rD-D6g"/>
                         <outletCollection property="addPersonButton" destination="XHP-F0-s71" collectionClass="NSMutableArray" id="Y8H-Fc-aW7"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="GoToCamera" id="TyY-R9-ktn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Flb-KB-zrV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2670.9923664122134" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="3596.1832061068699" y="3.5211267605633805"/>
         </scene>
         <!--Pop Up View Controller-->
         <scene sceneID="p3L-Ve-7fr">
@@ -267,7 +289,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LCS-WU-xXn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3481.679389312977" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="4408.3969465648852" y="3.5211267605633805"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wmE-cS-B27">
@@ -285,7 +307,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aL8-24-cOO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1744.2748091603053" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="2670.9923664122134" y="3.5211267605633805"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="q3z-oX-4oG">
@@ -303,10 +325,34 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4mO-K1-syn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-170.22900763358777" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="756.48854961832058" y="3.5211267605633805"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="O8Y-Qb-sqj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="szN-eP-qcT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8DQ-4y-xWU">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="xxe-52-fMu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hq7-Xi-wtL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1147.3282442748091" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="bdf-bA-MYH"/>
+        <segue reference="AaS-sv-byL"/>
+        <segue reference="TyY-R9-ktn"/>
+    </inferredMetricsTieBreakers>
     <resources>
+        <image name="arrowshape.right.fill" catalog="system" width="128" height="104"/>
         <image name="circle" catalog="system" width="128" height="123"/>
         <image name="person.fill.badge.plus" catalog="system" width="128" height="126"/>
         <image name="plus" catalog="system" width="128" height="113"/>
@@ -314,7 +360,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemPurpleColor">
-            <color red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
