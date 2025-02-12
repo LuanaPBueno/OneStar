@@ -7,6 +7,12 @@
 
 import Foundation
 import UIKit
+import AVFoundation
+import SafariServices // Import necessário
+import AVKit
+
+
+
 
 class ChatViewController: UIViewController {
     @IBOutlet var chatControllerView: UITableView!
@@ -24,6 +30,13 @@ class ChatViewController: UIViewController {
         
     }
     
+
+    func playVideo() {
+        let customVideoVC = CustomVideoViewController()
+        present(customVideoVC, animated: true, completion: nil)
+    }
+
+    
     @objc func showPopUp() {
         let popUpVC = PopUpViewController() // Aqui criamos a instância do PopUpViewController.
         
@@ -36,7 +49,14 @@ class ChatViewController: UIViewController {
 }
 
 extension ChatViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            let friend = friends[indexPath.row]
+            
+            // Verifica se a pessoa recebeu uma foto
+            if friend.receivedPhoto {
+                playVideo()
+            }
+        }
 }
 
 
@@ -66,9 +86,27 @@ extension ChatViewController: UITableViewDataSource {
         cell.textLabel?.font = UIFont(name: "Avenir-Heavy", size: 18) // Fonte parecida com a do Snapchat
         cell.textLabel?.textColor = .black
         
+        let indicatorSize: CGFloat = 12
+            let newMessageIndicator = UIView(frame: CGRect(
+                x: cell.contentView.frame.width - indicatorSize - 20, // Posiciona à direita
+                y: cell.contentView.frame.height / 2 - indicatorSize / 2, // Centraliza na altura
+                width: indicatorSize,
+                height: indicatorSize
+            ))
+            
+            newMessageIndicator.backgroundColor = .green
+            newMessageIndicator.layer.cornerRadius = indicatorSize / 2
+            newMessageIndicator.isHidden = !friend.receivedPhoto // Mostra apenas se recebeu nova mensagem
+            
+            // Adicionar a bolinha na célula
+            cell.contentView.addSubview(newMessageIndicator)
+
+        
         // Fundo branco e sem seleção destacada
         cell.backgroundColor = .white
         cell.selectionStyle = .none
+        
+        
        return cell
    }
 }
