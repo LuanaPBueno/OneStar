@@ -15,6 +15,8 @@ import AVKit
 
 
 class ChatViewController: UIViewController {
+    
+    
     @IBOutlet var chatControllerView: UITableView!
     
     @IBOutlet var addPersonButton: [UIBarButtonItem]!

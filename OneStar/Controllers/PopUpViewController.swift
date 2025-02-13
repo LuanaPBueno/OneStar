@@ -37,22 +37,12 @@ extension PopUpViewController: UITableViewDataSource {
     //OQ EU PRECISO: Que deixe a interface mais bonitinha.
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell", for: indexPath) as! ChatTableViewCell
+        
         let friend = users[indexPath.row]
         
-        // Estilizando a imagem do perfil para ser redonda
-        cell.imageView?.image = friend.profilePicture
-        cell.imageView?.layer.cornerRadius = (cell.imageView?.frame.width ?? 50) / 2
-        cell.imageView?.layer.masksToBounds = true
+        cell.setup(friend: friend , id: indexPath.row)
         
-        // Personalizando o nome do amigo
-        cell.textLabel?.text = friend.profileName
-        cell.textLabel?.font = UIFont(name: "Avenir-Heavy", size: 18) // Fonte parecida com a do Snapchat
-        cell.textLabel?.textColor = .black
-        
-        // Fundo branco e sem seleção destacada
-        cell.backgroundColor = .white
-        cell.selectionStyle = .none
        return cell
    }
 }

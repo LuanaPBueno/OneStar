@@ -8,13 +8,16 @@
 import Foundation
 import UIKit
 
+let currentUser = Person(id: "0", profileName: "Luana Bueno", profilePicture: UIImage(named: "memoji1"), receivedPhoto: false)
+
+
 class Person{
     var id: String
     var profileName: String
     var profilePicture: UIImage?
     var receivedPhotos: [UIImage]?
     var friends: [Person] = []
-    var receivedPhoto: Bool
+    var receivedPhoto: Bool = false
     
     init(id: String, profileName: String, profilePicture: UIImage? = nil, receivedPhotos: [UIImage]? = nil, friends: [Person]? = nil, receivedPhoto: Bool) {
         self.id = id
@@ -25,20 +28,28 @@ class Person{
         self.receivedPhoto = receivedPhoto
     }
     
-    func addFriends(friend: Person) {
+    func add(friend: Person) {
             friends.append(friend)
+            print(friend.profileName)
         }
 }
 
 extension Person {
     static func mockFriends() -> [Person] {
-        return [
+        
+        let friends = [
             Person(id: "1", profileName: "Alice Johnson", profilePicture: UIImage(named: "memoji1"), receivedPhoto: true ),
             Person(id: "2", profileName: "Barbie Smith", profilePicture: UIImage(named: "memoji2"), receivedPhoto: true ),
             Person(id: "3", profileName: "Charlie Davis", profilePicture: UIImage(named: "memoji3"), receivedPhoto: false),
             Person(id: "4", profileName: "Diana White", profilePicture: UIImage(named: "memoji4"), receivedPhoto: false),
             Person(id: "5", profileName: "Dilan Brown", profilePicture: UIImage(named: "memoji5"), receivedPhoto: false)
         ]
+        
+        for friend in friends{
+            currentUser.friends.append(friend)
+        }
+        
+        return friends
     }
 }
  
@@ -68,3 +79,4 @@ extension Person {
         
     }
 }
+
