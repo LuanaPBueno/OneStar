@@ -8,25 +8,26 @@
 import UIKit
 
 class ChatTableViewCell: UITableViewCell {
-    
+
     var friend: Person = Person(id: "", profileName: "", receivedPhoto: false)
+    var onAddFriend: (() -> Void)? // Closure para notificar o pop-up view controller
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     @IBAction func addingFriendButton(_ sender: Any) {
         currentUser.add(friend: friend)
+        onAddFriend?()
     }
     
-    func setup(friend: Person, id: Int){
+    func setup(friend: Person, id: Int, onAddFriend: (() -> Void)? = nil){
+        self.friend = friend
+        self.onAddFriend = onAddFriend  // Atribui o closure
         
         self.imageView?.image = friend.profilePicture
         self.imageView?.layer.cornerRadius = (self.imageView?.frame.width ?? 50) / 2
@@ -38,9 +39,5 @@ class ChatTableViewCell: UITableViewCell {
         
         self.backgroundColor = .white
         self.selectionStyle = .none
-        
-        self.friend = friend
     }
 }
-
-

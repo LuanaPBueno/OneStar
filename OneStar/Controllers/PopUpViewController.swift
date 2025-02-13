@@ -11,6 +11,8 @@ class PopUpViewController: UIViewController {
 
     @IBOutlet weak var addingFriendscontrol: UITableView!
     
+    weak var delegate: PopUpViewControllerDelegate?
+    
     var users = Person.mockPeople()
     
     override func viewDidLoad() {
@@ -18,6 +20,14 @@ class PopUpViewController: UIViewController {
         addingFriendscontrol.delegate = self
         addingFriendscontrol.dataSource = self
     }
+    
+    func addFriendAndReloadData(friend: Person) {
+            // Atualiza a lista de usuários após adicionar um amigo
+            users = users.filter { $0.id != friend.id } // Remover o amigo adicionado da lista
+            currentUser.add(friend: friend)
+            addingFriendscontrol.reloadData() // Recarrega a tabela
+            delegate?.reloadChatData()
+        }
 }
 
 extension PopUpViewController: UITableViewDelegate {
@@ -37,13 +47,20 @@ extension PopUpViewController: UITableViewDataSource {
     //OQ EU PRECISO: Que deixe a interface mais bonitinha.
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell", for: indexPath) as! ChatTableViewCell
-        
-        let friend = users[indexPath.row]
-        
-        cell.setup(friend: friend , id: indexPath.row)
-        
-       return cell
-   }
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell", for: indexPath) as! ChatTableViewCell
+            
+            let friend = users[indexPath.row]
+            
+            cell.setup(friend: friend, id: indexPath.row) {
+                self.addFriendAndReloadData(friend: friend)
+            }
+            
+            return cell
+        }
 }
 
+
+protocol PopUpViewControllerDelegate: AnyObject {
+    func reloadChatData()
+    
+}
