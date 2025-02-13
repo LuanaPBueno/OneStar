@@ -31,6 +31,7 @@ class Person{
     func add(friend: Person) {
             friends.append(friend)
             print(friend.profileName)
+            NotificationCenter.default.post(name: NSNotification.Name("FriendsUpdated"), object: nil)
         }
 }
 
@@ -72,7 +73,7 @@ extension Person {
             Person(id: "22", profileName: "Benjamin Scott", profilePicture: UIImage(named: "memoji2"), receivedPhoto: false),
             Person(id: "23", profileName: "Ava Cooper", profilePicture: UIImage(named: "memoji3"), receivedPhoto: false)
         ]
-        let friendIDs = Set(mockFriends().map { $0.id }) // Pegamos os IDs dos amigos
+        let friendIDs = Set(currentUser.friends.map { $0.id }) // Pegamos os IDs dos amigos
         
         let filteredPeople = allPeople.filter { !friendIDs.contains($0.id) } // Remove amigos
         return filteredPeople

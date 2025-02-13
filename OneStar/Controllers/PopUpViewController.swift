@@ -24,7 +24,6 @@ class PopUpViewController: UIViewController {
     func addFriendAndReloadData(friend: Person) {
             // Atualiza a lista de usuários após adicionar um amigo
             users = users.filter { $0.id != friend.id } // Remover o amigo adicionado da lista
-            currentUser.add(friend: friend)
             addingFriendscontrol.reloadData() // Recarrega a tabela
             delegate?.reloadChatData()
         }

@@ -20,7 +20,7 @@ class ChatViewController: UIViewController {
     @IBOutlet var chatControllerView: UITableView!
     
     @IBOutlet var addPersonButton: [UIBarButtonItem]!
-    var friends = Person.mockFriends() //Aqui eu tenho todos os meus amigos
+    var friends = currentUser.friends 
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,10 +28,16 @@ class ChatViewController: UIViewController {
         chatControllerView.dataSource = self
 //        addPersonButton.first!.action = #selector(showPopUp)
 //        addPersonButton.first!.target = self
+        NotificationCenter.default.addObserver(self, selector: #selector(updateFriends), name: NSNotification.Name("FriendsUpdated"), object: nil)
         
         
     }
-    
+
+    @objc func updateFriends() {
+        friends = currentUser.friends // Atualiza a lista de amigos
+        chatControllerView.reloadData() // Atualiza a interface
+    }
+
   
 
     func playVideo() {
