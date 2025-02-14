@@ -62,15 +62,15 @@ extension Person {
             Person(id: "10", profileName: "Julie King", profilePicture: UIImage(named: "memoji1"), receivedPhoto: false),
             Person(id: "12", profileName: "Sophia Bingham", profilePicture: UIImage(named: "memoji2"), receivedPhoto: false),
             Person(id: "13", profileName: "Charlie Davis", profilePicture: UIImage(named: "memoji3"), receivedPhoto: false),
-            Person(id: "14", profileName: "William Harris", profilePicture: UIImage(named: "memoji4"), receivedPhoto: false),
-            Person(id: "15", profileName: "Sofia Parker", profilePicture: UIImage(named: "memoji5"), receivedPhoto: false),
-            Person(id: "16", profileName: "Lucas Oliveira", profilePicture: UIImage(named: "memoji1"), receivedPhoto: false),
+            Person(id: "14", profileName: "William Harris", profilePicture: UIImage(named: "memoji5"), receivedPhoto: false),
+            Person(id: "15", profileName: "Sofia Parker", profilePicture: UIImage(named: "memoji4"), receivedPhoto: false),
+            Person(id: "16", profileName: "Lucas Oliveira", profilePicture: UIImage(named: "memoji5"), receivedPhoto: false),
             Person(id: "17", profileName: "Emma Wilson", profilePicture: UIImage(named: "memoji2"), receivedPhoto: false),
-            Person(id: "18", profileName: "Noah Martinez", profilePicture: UIImage(named: "memoji3"), receivedPhoto: false),
+            Person(id: "18", profileName: "Noah Martinez", profilePicture: UIImage(named: "memoji5"), receivedPhoto: false),
             Person(id: "19", profileName: "Olivia Taylor", profilePicture: UIImage(named: "memoji4"), receivedPhoto: false),
             Person(id: "20", profileName: "Ethan Johnson", profilePicture: UIImage(named: "memoji5"), receivedPhoto: false),
             Person(id: "21", profileName: "Mia Rodriguez", profilePicture: UIImage(named: "memoji1"), receivedPhoto: false),
-            Person(id: "22", profileName: "Benjamin Scott", profilePicture: UIImage(named: "memoji2"), receivedPhoto: false),
+            Person(id: "22", profileName: "Benjamin Scott", profilePicture: UIImage(named: "memoji5"), receivedPhoto: false),
             Person(id: "23", profileName: "Ava Cooper", profilePicture: UIImage(named: "memoji3"), receivedPhoto: false)
         ]
         let friendIDs = Set(currentUser.friends.map { $0.id }) // Pegamos os IDs dos amigos
