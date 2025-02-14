@@ -49,7 +49,6 @@ class ChatViewController: UIViewController {
     @objc func showPopUp() {
         let popUpVC = PopUpViewController() // Aqui criamos a instância do PopUpViewController.
         
-        // Definindo o estilo de apresentação do PopUp (modal)
         popUpVC.modalPresentationStyle = .overCurrentContext  // Para o pop-up aparecer sobre o atual contexto
         popUpVC.modalTransitionStyle = .crossDissolve  // Para uma transição suave
         
@@ -92,31 +91,25 @@ extension ChatViewController: UITableViewDataSource {
         
         // Personalizando o nome do amigo
         cell.textLabel?.text = friend.profileName
-        cell.textLabel?.font = UIFont(name: "Avenir-Heavy", size: 18) // Fonte parecida com a do Snapchat
+        cell.textLabel?.font = UIFont(name: "Avenir-Heavy", size: 18)
         cell.textLabel?.textColor = .black
         
+        // Criando ou reutilizando o indicador de nova mensagem
         let indicatorSize: CGFloat = 12
-            let newMessageIndicator = UIView(frame: CGRect(
-                x: cell.contentView.frame.width - indicatorSize - 20, // Posiciona à direita
-                y: cell.contentView.frame.height / 2 - indicatorSize / 2, // Centraliza na altura
-                width: indicatorSize,
-                height: indicatorSize
-            ))
-            
-            newMessageIndicator.backgroundColor = .green
-            newMessageIndicator.layer.cornerRadius = indicatorSize / 2
-            newMessageIndicator.isHidden = !friend.receivedPhoto // Mostra apenas se recebeu nova mensagem
-            
-            // Adicionar a bolinha na célula
-            cell.contentView.addSubview(newMessageIndicator)
-
+        let newMessageIndicator = UIView(frame: CGRect(x: 0, y: 0, width: indicatorSize, height: indicatorSize))
+        newMessageIndicator.backgroundColor = .green
+        newMessageIndicator.layer.cornerRadius = indicatorSize / 2
+        newMessageIndicator.isHidden = !friend.receivedPhoto
         
+        // Usando accessoryView para evitar múltiplas adições
+        cell.accessoryView = newMessageIndicator
+
         // Fundo branco e sem seleção destacada
         cell.backgroundColor = .white
         cell.selectionStyle = .none
         
-        
-       return cell
-   }
+        return cell
+    }
+
 }
 
