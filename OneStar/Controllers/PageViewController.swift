@@ -11,7 +11,7 @@ import UIKit
 class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
 
     // Array com os IDs dos view controllers no storyboard
-    let viewControllerIDs = ["ChatView", "CameraView"]
+    let viewControllerIDs = ["CameraView", "ChatView"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,9 +20,12 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         self.dataSource = self
         
         // Configura o primeiro view controller (ChatView)
-        if let firstViewController = viewControllerAtIndex(0) {
+        if let firstViewController = viewControllerAtIndex(1) { // ChatView está no índice 1
             setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
         }
+        
+        // Adiciona um observer para detectar mudanças no view controller atual
+        self.delegate = self
     }
 
     // Método para retornar o view controller anterior (swipe para a direita)
@@ -84,5 +87,30 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         
         // Retorna o índice correspondente no array
         return viewControllerIDs.firstIndex(of: identifier)
+    }
+}
+
+// Extensão para implementar o UIPageViewControllerDelegate
+extension PageViewController: UIPageViewControllerDelegate {
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        
+        // Verifica se a transição foi concluída e se o view controller atual é o ChatView
+        if completed, let currentViewController = pageViewController.viewControllers?.first {
+            if currentViewController.restorationIdentifier == "ChatView" {
+                // Desabilita o gesto de swipe para a direita
+                for gesture in pageViewController.gestureRecognizers {
+                    if let panGesture = gesture as? UIPanGestureRecognizer {
+                        panGesture.isEnabled = false
+                    }
+                }
+            } else {
+                // Habilita o gesto de swipe para a direita
+                for gesture in pageViewController.gestureRecognizers {
+                    if let panGesture = gesture as? UIPanGestureRecognizer {
+                        panGesture.isEnabled = true
+                    }
+                }
+            }
+        }
     }
 }

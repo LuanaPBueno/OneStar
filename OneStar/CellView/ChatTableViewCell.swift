@@ -8,7 +8,6 @@
 import UIKit
 
 class ChatTableViewCell: UITableViewCell {
-
     var friend: Person = Person(id: "", profileName: "", receivedPhoto: false)
     var onAddFriend: (() -> Void)? // Closure para notificar o pop-up view controller
     
