@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mtW-Pu-jIW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="G04-ME-OsJ">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -142,7 +142,7 @@
         <!--Mates-->
         <scene sceneID="QYg-ii-Px4">
             <objects>
-                <viewController id="ePh-6B-7ev" customClass="ChatViewController" customModule="OneStar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChatView" id="ePh-6B-7ev" customClass="ChatViewController" customModule="OneStar" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="azg-ch-UQ4">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -328,10 +328,18 @@
             </objects>
             <point key="canvasLocation" x="756.48854961832058" y="3.5211267605633805"/>
         </scene>
+        <!--Page View Controller-->
+        <scene sceneID="oPN-2J-xC0">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="G04-ME-OsJ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kp4-fL-LbN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1147" y="-811"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="O8Y-Qb-sqj">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="szN-eP-qcT" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CameraView" automaticallyAdjustsScrollViewInsets="NO" id="szN-eP-qcT" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8DQ-4y-xWU">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -348,8 +356,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="7g6-s6-wSN"/>
-        <segue reference="7BO-d0-2Vo"/>
+        <segue reference="bdf-bA-MYH"/>
+        <segue reference="AaS-sv-byL"/>
         <segue reference="xxe-52-fMu"/>
     </inferredMetricsTieBreakers>
     <resources>
