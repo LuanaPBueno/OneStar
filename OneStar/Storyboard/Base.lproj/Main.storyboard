@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mtW-Pu-jIW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="G04-ME-OsJ">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
@@ -14,11 +14,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="CameraViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hoZ-6m-Nv4">
-                                <rect key="frame" x="183.66666666666666" y="745" width="25.666666666666657" height="41"/>
+                                <rect key="frame" x="183.66666666666666" y="769" width="25.666666666666657" height="41"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -28,7 +28,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVD-xy-KiG">
-                                <rect key="frame" x="333" y="751.66666666666663" width="44" height="34.333333333333371"/>
+                                <rect key="frame" x="333" y="775.66666666666663" width="44" height="34.333333333333371"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="vee-O9-hSd"/>
                                 </constraints>
@@ -142,9 +142,9 @@
         <!--Mates-->
         <scene sceneID="QYg-ii-Px4">
             <objects>
-                <viewController storyboardIdentifier="ChatView" id="ePh-6B-7ev" customClass="ChatViewController" customModule="OneStar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="ChatView" storyboardIdentifier="ChatView" id="ePh-6B-7ev" customClass="ChatViewController" customModule="OneStar" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="azg-ch-UQ4">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -331,7 +331,7 @@
         <!--Page View Controller-->
         <scene sceneID="oPN-2J-xC0">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="G04-ME-OsJ" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="G04-ME-OsJ" customClass="PageViewController" customModule="OneStar" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kp4-fL-LbN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1147" y="-811"/>
@@ -339,7 +339,7 @@
         <!--Navigation Controller-->
         <scene sceneID="O8Y-Qb-sqj">
             <objects>
-                <navigationController storyboardIdentifier="CameraView" automaticallyAdjustsScrollViewInsets="NO" id="szN-eP-qcT" sceneMemberID="viewController">
+                <navigationController restorationIdentifier="CameraView" storyboardIdentifier="CameraView" automaticallyAdjustsScrollViewInsets="NO" id="szN-eP-qcT" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8DQ-4y-xWU">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -356,7 +356,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="0nc-kW-NCK"/>
+        <segue reference="7g6-s6-wSN"/>
         <segue reference="AaS-sv-byL"/>
         <segue reference="TyY-R9-ktn"/>
     </inferredMetricsTieBreakers>
