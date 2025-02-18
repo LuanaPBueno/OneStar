@@ -26,6 +26,9 @@
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <imageReference key="image" image="circle" catalog="system" symbolScale="large"/>
                                 </state>
+                                <connections>
+                                    <action selector="stoppingVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xgc-tt-4ws"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVD-xy-KiG">
                                 <rect key="frame" x="333" y="775.66666666666663" width="44" height="34.333333333333371"/>
