@@ -210,8 +210,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="293" height="360"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="userName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qRr-h0-Vhr">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search for a mate " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qRr-h0-Vhr">
                                 <rect key="frame" x="16" y="52" width="261" height="34"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -282,6 +283,7 @@
                     <size key="freeformSize" width="293" height="360"/>
                     <connections>
                         <outlet property="addingFriendscontrol" destination="u43-uu-pmr" id="dxH-4w-sLz"/>
+                        <outlet property="searchBar" destination="qRr-h0-Vhr" id="quH-up-KHL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LCS-WU-xXn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
