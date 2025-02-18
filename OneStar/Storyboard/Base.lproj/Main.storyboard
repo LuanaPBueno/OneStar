@@ -12,13 +12,13 @@
         <!--Camera View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="CameraViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CameraViewController" customModule="OneStar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hoZ-6m-Nv4">
-                                <rect key="frame" x="183.66666666666666" y="769" width="25.666666666666657" height="41"/>
+                                <rect key="frame" x="183.66666666666666" y="745" width="25.666666666666657" height="41"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -28,7 +28,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVD-xy-KiG">
-                                <rect key="frame" x="333" y="775.66666666666663" width="44" height="34.333333333333371"/>
+                                <rect key="frame" x="333" y="751.66666666666663" width="44" height="34.333333333333371"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="vee-O9-hSd"/>
                                 </constraints>
@@ -36,7 +36,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" image="arrowshape.right.fill" catalog="system"/>
                                 <connections>
-                                    <segue destination="wwL-5c-dPq" kind="show" identifier="GoToSendingPage" id="7BO-d0-2Vo"/>
+                                    <segue destination="afI-oC-BRu" kind="presentation" identifier="GoToSendingPage" id="CAh-7V-uOa"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -63,11 +63,11 @@
             <objects>
                 <viewController id="wwL-5c-dPq" customClass="SendingPicViewController" customModule="OneStar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dPa-ek-dGy">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gzj-b2-I0i">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <rect key="frame" x="0.0" y="56" width="393" height="786"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="UNo-s5-mx9">
@@ -129,11 +129,11 @@
                     <navigationItem key="navigationItem" title="Choose your Mates" id="bfP-Mp-0yi">
                         <barButtonItem key="rightBarButtonItem" title="Send" id="pJf-hB-ddJ">
                             <color key="tintColor" systemColor="systemPurpleColor"/>
-                            <connections>
-                                <segue destination="ePh-6B-7ev" kind="show" identifier="SendToMatesView" id="bdf-bA-MYH"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="sendToFriend" destination="gzj-b2-I0i" id="rFF-vh-jeW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GpR-4H-jJc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -142,9 +142,9 @@
         <!--Mates-->
         <scene sceneID="QYg-ii-Px4">
             <objects>
-                <viewController restorationIdentifier="ChatView" storyboardIdentifier="ChatView" id="ePh-6B-7ev" customClass="ChatViewController" customModule="OneStar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ePh-6B-7ev" customClass="ChatViewController" customModule="OneStar" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="azg-ch-UQ4">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -183,7 +183,7 @@
                         <barButtonItem key="rightBarButtonItem" image="person.fill.badge.plus" catalog="system" id="XHP-F0-s71">
                             <color key="tintColor" systemColor="systemPurpleColor"/>
                             <connections>
-                                <segue destination="inn-3w-OFU" kind="popoverPresentation" popoverAnchorBarButtonItem="XHP-F0-s71" id="h3B-BZ-i5y">
+                                <segue destination="ebv-qm-Yop" kind="popoverPresentation" popoverAnchorBarButtonItem="XHP-F0-s71" id="h3B-BZ-i5y">
                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                 </segue>
                             </connections>
@@ -199,7 +199,7 @@
             </objects>
             <point key="canvasLocation" x="3555" y="4"/>
         </scene>
-        <!--Pop Up View Controller-->
+        <!--Add Mates-->
         <scene sceneID="p3L-Ve-7fr">
             <objects>
                 <viewController id="inn-3w-OFU" customClass="PopUpViewController" customModule="OneStar" customModuleProvider="target" sceneMemberID="viewController">
@@ -207,19 +207,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="293" height="360"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Mate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xi9-gy-Ijm">
-                                <rect key="frame" x="109.66666666666669" y="16" width="74" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="userName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qRr-h0-Vhr">
-                                <rect key="frame" x="16" y="45" width="261" height="34"/>
+                                <rect key="frame" x="16" y="52" width="261" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="u43-uu-pmr">
-                                <rect key="frame" x="0.0" y="79" width="293" height="281"/>
+                                <rect key="frame" x="0.0" y="86" width="293" height="274"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatCell" id="fIR-uQ-dFg" customClass="ChatTableViewCell" customModule="OneStar" customModuleProvider="target">
@@ -273,15 +267,14 @@
                         <constraints>
                             <constraint firstItem="u43-uu-pmr" firstAttribute="top" secondItem="qRr-h0-Vhr" secondAttribute="bottom" id="LuC-qs-hKy"/>
                             <constraint firstItem="qRr-h0-Vhr" firstAttribute="leading" secondItem="0cE-Lj-ZYq" secondAttribute="leading" constant="16" id="LwI-8a-Khc"/>
-                            <constraint firstItem="qRr-h0-Vhr" firstAttribute="top" secondItem="xi9-gy-Ijm" secondAttribute="bottom" constant="8" symbolic="YES" id="NMb-5L-kvb"/>
                             <constraint firstItem="u43-uu-pmr" firstAttribute="leading" secondItem="0cE-Lj-ZYq" secondAttribute="leading" id="SYD-hF-U3A"/>
-                            <constraint firstItem="xi9-gy-Ijm" firstAttribute="top" secondItem="0cE-Lj-ZYq" secondAttribute="top" constant="16" id="V0V-6T-4Xi"/>
                             <constraint firstItem="0cE-Lj-ZYq" firstAttribute="bottom" secondItem="u43-uu-pmr" secondAttribute="bottom" id="VhN-cM-7Vs"/>
-                            <constraint firstItem="xi9-gy-Ijm" firstAttribute="centerX" secondItem="Umx-wR-U2C" secondAttribute="centerX" id="kCz-99-D1Q"/>
+                            <constraint firstItem="qRr-h0-Vhr" firstAttribute="top" secondItem="0cE-Lj-ZYq" secondAttribute="top" constant="8" id="eX7-50-WUP"/>
                             <constraint firstItem="0cE-Lj-ZYq" firstAttribute="trailing" secondItem="qRr-h0-Vhr" secondAttribute="trailing" constant="16" id="n8i-88-IRr"/>
                             <constraint firstItem="0cE-Lj-ZYq" firstAttribute="trailing" secondItem="u43-uu-pmr" secondAttribute="trailing" id="pTP-iG-S2P"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Add Mates" id="kiF-GH-MJn"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="293" height="360"/>
                     <connections>
@@ -290,12 +283,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LCS-WU-xXn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4408.3969465648852" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="5335.1145038167933" y="3.5211267605633805"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wmE-cS-B27">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mtW-Pu-jIW" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ChatView" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mtW-Pu-jIW" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gyq-P4-dpF">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -303,12 +296,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="ePh-6B-7ev" kind="relationship" relationship="rootViewController" id="0nc-kW-NCK"/>
+                        <segue destination="ePh-6B-7ev" kind="relationship" relationship="rootViewController" id="b4q-XX-IoQ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aL8-24-cOO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2566" y="4"/>
+            <point key="canvasLocation" x="2769" y="-412"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="q3z-oX-4oG">
@@ -316,7 +309,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="afI-oC-BRu" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iRF-qu-o8Z">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -354,11 +347,28 @@
             </objects>
             <point key="canvasLocation" x="-1147.3282442748091" y="3.5211267605633805"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dfB-j0-5cw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ebv-qm-Yop" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hyf-bM-S7D">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="inn-3w-OFU" kind="relationship" relationship="rootViewController" id="eAb-3F-UZ7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VDL-ga-UWl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4408.3969465648852" y="3.5211267605633805"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="7g6-s6-wSN"/>
-        <segue reference="AaS-sv-byL"/>
-        <segue reference="TyY-R9-ktn"/>
+        <segue reference="xxe-52-fMu"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrowshape.right.fill" catalog="system" width="128" height="104"/>

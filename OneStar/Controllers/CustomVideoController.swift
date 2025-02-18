@@ -11,26 +11,31 @@ class CustomVideoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Adiciona o player de vídeo
         if let videoPath = Bundle.main.path(forResource: "IMG_4984", ofType: "mp4") {
             player = AVPlayer(url: URL(fileURLWithPath: videoPath))
             playerLayer = AVPlayerLayer(player: player)
             playerLayer.frame = view.bounds
+            playerLayer.videoGravity = .resizeAspectFill
             view.layer.addSublayer(playerLayer)
             
             // Barra amarela no topo (ajustada para não ficar muito longe de cima)
             progressBar = UIView()
-            progressBar.frame = CGRect(x: 0, y: 72, width: 0, height: 8) // Ajuste na posição
-            progressBar.backgroundColor = .yellow
+            progressBar.frame = CGRect(x: 0, y: 0, width: 0, height: 8) // Ajuste na posição
+            progressBar.backgroundColor = .purple
             view.addSubview(progressBar)
             
             // Inicia a animação da barra
-            animateProgressBar()
+            
             
             // Inicia o vídeo
             player.play()
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        animateProgressBar()
     }
     
     func animateProgressBar() {

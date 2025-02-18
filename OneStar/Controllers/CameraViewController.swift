@@ -9,7 +9,7 @@ import UIKit
 import AVFoundation
 
 class CameraViewController: UIViewController {
-    @IBOutlet var cameraControlView: UIView!
+//    @IBOutlet var cameraControlView: UIView!
     
     var player: AVPlayer?
         var playerLayer: AVPlayerLayer?
@@ -18,7 +18,7 @@ class CameraViewController: UIViewController {
             super.viewDidLoad()
             
             // Caminho do vídeo (altere para a URL correta)
-            guard let videoURL = Bundle.main.url(forResource: "video", withExtension: "mp4") else {
+            guard let videoURL = Bundle.main.url(forResource: "IMG_4984", withExtension: "mp4") else {
                 print("Vídeo não encontrado!")
                 return
             }
@@ -28,12 +28,13 @@ class CameraViewController: UIViewController {
             playerLayer = AVPlayerLayer(player: player)
             
             // Ajustar tamanho do player para caber na UIView
-            playerLayer?.frame = cameraControlView.bounds
+            playerLayer?.frame = view.bounds
             playerLayer?.videoGravity = .resizeAspectFill
             
             // Adicionar a camada do player na view
             if let playerLayer = playerLayer {
-                cameraControlView.layer.addSublayer(playerLayer)
+                view.layer.addSublayer(playerLayer)
+                playerLayer.zPosition = -1
             }
             
             // Iniciar a reprodução

@@ -9,6 +9,7 @@ import UIKit
 
 class SendingPicViewController: UIViewController {
 
+    @IBOutlet weak var sendToFriend: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
