@@ -7,7 +7,7 @@ class CustomVideoViewController: UIViewController {
     var playerLayer: AVPlayerLayer!
     var progressBar: UIView!
     var progressBarWidth: CGFloat = 0
-    var animationDuration: Double = 4.0
+    var animationDuration: Double = 7.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +22,8 @@ class CustomVideoViewController: UIViewController {
             progressBar.frame = CGRect(x: 0, y: 0, width: 0, height: 8)
             progressBar.backgroundColor = .purple
             view.addSubview(progressBar)
+            
+            NotificationCenter.default.addObserver(self, selector: #selector(videoDidEnd), name: .AVPlayerItemDidPlayToEndTime, object: player.currentItem)
             
             player.play()
         }
@@ -41,9 +43,9 @@ class CustomVideoViewController: UIViewController {
         }, completion: { _ in
         })
     }
-    
-    @objc func dismissVideo() {
-        self.dismiss(animated: true, completion: nil)
-    }
+
+    @objc func videoDidEnd() {
+            dismiss(animated: true, completion: nil)
+        }
 }
 
