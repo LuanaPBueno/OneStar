@@ -13,7 +13,7 @@ import AVKit
 
 class ChatViewController: UIViewController {
     @IBOutlet var chatControllerView: UITableView!
-    @IBOutlet var addPersonButton: [UIBarButtonItem]!
+    @IBOutlet var addPersonButton: [UIBarButtonItem]! 
     var friends = currentUser.friends 
 
     override func viewDidLoad() {
@@ -81,7 +81,7 @@ extension ChatViewController: UITableViewDataSource {
         
         let indicatorSize: CGFloat = 12
         let newMessageIndicator = UIView(frame: CGRect(x: 0, y: 0, width: indicatorSize, height: indicatorSize))
-        newMessageIndicator.backgroundColor = .green
+        newMessageIndicator.backgroundColor = UIColor(named: "Roxo")
         newMessageIndicator.layer.cornerRadius = indicatorSize / 2
         newMessageIndicator.isHidden = !friend.receivedPhoto
         

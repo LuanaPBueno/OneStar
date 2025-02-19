@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="G04-ME-OsJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="G04-ME-OsJ">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,13 +19,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hoZ-6m-Nv4">
-                                <rect key="frame" x="183.66666666666666" y="769" width="25.666666666666657" height="41"/>
+                                <rect key="frame" x="183.33333333333334" y="769" width="26.666666666666657" height="41"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="Roxo"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <imageReference key="image" image="circle" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="bold"/>
                                 </state>
                                 <connections>
                                     <action selector="stoppingVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xgc-tt-4ws"/>
@@ -35,7 +37,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="vee-O9-hSd"/>
                                 </constraints>
-                                <color key="tintColor" systemColor="systemPurpleColor"/>
+                                <color key="tintColor" name="Roxo"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" image="arrowshape.right.fill" catalog="system"/>
                                 <connections>
@@ -99,7 +101,7 @@
                                                         <constraint firstAttribute="width" priority="750" constant="44" id="F35-ei-qDw"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="uV3-CH-06m"/>
                                                     </constraints>
-                                                    <color key="tintColor" systemColor="systemPurpleColor"/>
+                                                    <color key="tintColor" name="Roxo"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="filled" image="circle" catalog="system"/>
                                                 </button>
@@ -131,7 +133,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Choose your Mates" id="bfP-Mp-0yi">
                         <barButtonItem key="rightBarButtonItem" title="Send" id="pJf-hB-ddJ">
-                            <color key="tintColor" systemColor="systemPurpleColor"/>
+                            <color key="tintColor" name="Roxo"/>
                             <connections>
                                 <action selector="dismissSheet:" destination="wwL-5c-dPq" id="uiH-wN-COg"/>
                             </connections>
@@ -248,7 +250,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="li6-L5-yTF"/>
                                                     </constraints>
-                                                    <color key="tintColor" systemColor="systemPurpleColor"/>
+                                                    <color key="tintColor" name="Roxo"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="filled" image="plus" catalog="system" title=""/>
                                                     <connections>
@@ -383,11 +385,14 @@
         <image name="circle" catalog="system" width="128" height="123"/>
         <image name="person.fill.badge.plus" catalog="system" width="128" height="126"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <namedColor name="Roxo">
+            <color red="0.66699999570846558" green="0.5690000057220459" blue="0.79600000381469727" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
