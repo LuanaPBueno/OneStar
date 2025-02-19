@@ -53,8 +53,6 @@ extension Person {
         return friends
     }
 }
- 
-
 
 extension Person {
     static func mockPeople() -> [Person] {
@@ -73,9 +71,9 @@ extension Person {
             Person(id: "22", profileName: "Benjamin Scott", profilePicture: UIImage(named: "memoji5"), receivedPhoto: false),
             Person(id: "23", profileName: "Ava Cooper", profilePicture: UIImage(named: "memoji3"), receivedPhoto: false)
         ]
-        let friendIDs = Set(currentUser.friends.map { $0.id }) // Pegamos os IDs dos amigos
+        let friendIDs = Set(currentUser.friends.map { $0.id })
         
-        let filteredPeople = allPeople.filter { !friendIDs.contains($0.id) } // Remove amigos
+        let filteredPeople = allPeople.filter { !friendIDs.contains($0.id) } 
         return filteredPeople
         
     }

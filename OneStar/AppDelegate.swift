@@ -24,12 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         customNavBarAppearance.configureWithOpaqueBackground()
         customNavBarAppearance.backgroundImage = image(fromLayer: gradient)
         
-        // Apply white colored normal and large titles.
         customNavBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         customNavBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
 
 
-        // Apply white color to all the nav bar buttons.
         let barButtonItemAppearance = UIBarButtonItemAppearance(style: .plain)
         barButtonItemAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.white]
         barButtonItemAppearance.disabled.titleTextAttributes = [.foregroundColor: UIColor.lightText]
@@ -43,7 +41,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         _ = Person.mockFriends()
         let newNavBarAppearance = customNavBarAppearance()
         
@@ -61,8 +58,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
 
