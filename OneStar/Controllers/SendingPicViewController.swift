@@ -17,7 +17,7 @@ class SendingPicViewController: UIViewController {
     
     @IBAction func dismissSheet(_ sender: Any){
         let messageLabel = UILabel()
-        messageLabel.text = "Video sent with sucess!"
+        messageLabel.text = "Video sent with success!"
         messageLabel.textColor = .white
         messageLabel.textAlignment = .center
         messageLabel.font = UIFont.boldSystemFont(ofSize: 16)
