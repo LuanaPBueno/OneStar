@@ -80,8 +80,9 @@ extension ChatViewController: UITableViewDataSource {
         cell.textLabel?.textColor = .black
         
         let indicatorSize: CGFloat = 12
-        let newMessageIndicator = UIView(frame: CGRect(x: 0, y: 0, width: indicatorSize, height: indicatorSize))
-        newMessageIndicator.backgroundColor = UIColor(named: "Roxo")
+        let newMessageIndicator = UIImageView(image: UIImage(systemName: "star.fill"))
+//        (frame: CGRect(x: 0, y: 0, width: indicatorSize, height: indicatorSize))
+        newMessageIndicator.tintColor = UIColor(named: "Roxo")
         newMessageIndicator.layer.cornerRadius = indicatorSize / 2
         newMessageIndicator.isHidden = !friend.receivedPhoto
         

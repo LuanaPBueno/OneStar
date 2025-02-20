@@ -15,11 +15,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="CameraViewController" customModule="OneStar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hoZ-6m-Nv4">
-                                <rect key="frame" x="183.33333333333334" y="769" width="26.666666666666657" height="41"/>
+                                <rect key="frame" x="183.33333333333334" y="745" width="26.666666666666657" height="41"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <color key="tintColor" name="Roxo"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -33,7 +33,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVD-xy-KiG">
-                                <rect key="frame" x="333" y="775.66666666666663" width="44" height="34.333333333333371"/>
+                                <rect key="frame" x="333" y="751.66666666666663" width="44" height="34.333333333333371"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="vee-O9-hSd"/>
                                 </constraints>
@@ -152,7 +152,7 @@
             <objects>
                 <viewController id="ePh-6B-7ev" customClass="ChatViewController" customModule="OneStar" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="azg-ch-UQ4">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -189,7 +189,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Mates" id="L3y-qV-wkZ">
                         <barButtonItem key="rightBarButtonItem" image="person.fill.badge.plus" catalog="system" id="XHP-F0-s71">
-                            <color key="tintColor" systemColor="systemPurpleColor"/>
+                            <color key="tintColor" systemColor="systemGroupedBackgroundColor"/>
                             <connections>
                                 <segue destination="ebv-qm-Yop" kind="popoverPresentation" popoverAnchorBarButtonItem="XHP-F0-s71" id="h3B-BZ-i5y">
                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
@@ -377,7 +377,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="7g6-s6-wSN"/>
+        <segue reference="b4q-XX-IoQ"/>
         <segue reference="TyY-R9-ktn"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -391,8 +391,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
